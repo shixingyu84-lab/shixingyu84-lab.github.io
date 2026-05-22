@@ -721,6 +721,23 @@ function toggleMusic() {
         btn.innerHTML = '&#9654;';
     }
 }
+
+// Auto-play on first user interaction (browsers block autoplay without interaction)
+function autoPlay() {
+    const audio = document.getElementById('bgm');
+    const player = document.getElementById('musicPlayer');
+    const btn = document.getElementById('playBtn');
+    audio.play().then(() => {
+        player.classList.add('playing');
+        btn.innerHTML = '&#9646;&#9646;';
+    }).catch(() => {});
+    document.removeEventListener('click', autoPlay);
+    document.removeEventListener('scroll', autoPlay);
+    document.removeEventListener('touchstart', autoPlay);
+}
+document.addEventListener('click', autoPlay);
+document.addEventListener('scroll', autoPlay);
+document.addEventListener('touchstart', autoPlay);
 </script>
 </body>
 </html>
