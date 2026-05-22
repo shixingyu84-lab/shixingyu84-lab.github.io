@@ -105,6 +105,23 @@
             padding-top: 0;
         }
 
+        .hero-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(0, 212, 255, 0.4);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .hero-avatar:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.4);
+            transform: scale(1.05);
+        }
+
         .hero h1 {
             font-size: 3.5rem;
             font-weight: 700;
@@ -304,6 +321,7 @@
 </nav>
 
 <section class="hero" id="hero">
+    <img src="avatar.jpg" alt="施星宇" class="hero-avatar">
     <h1>施星宇</h1>
     <div class="typewriter" id="typewriter"></div>
     <div class="hero-links">
